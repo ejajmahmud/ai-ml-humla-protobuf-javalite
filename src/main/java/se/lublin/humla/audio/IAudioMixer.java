@@ -1,0 +1,13 @@
+package se.lublin.humla.audio;
+
+import java.util.Collection;
+
+/**
+ * A mixer for {@link IAudioMixerSource}s, where {@link T} is the source buffer type and {@link U}
+ * is the destination buffer type.
+ */
+public interface IAudioMixer<T,U> {
+    void setVolume(double volume);
+    void mix(Collection<IAudioMixerSource<T>> sources, U buffer, int bufferOffset,
+             int bufferLength);
+}
